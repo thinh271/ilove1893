@@ -1,0 +1,184 @@
+/* ===== Reset và font ===== */
+body,
+html,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #ffeaf4;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+/* ===== App container ===== */
+.app {
+  position: relative;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  /* Căn giữa theo chiều ngang */
+  align-items: center;
+  /* Căn giữa theo chiều dọc */
+  flex-direction: column;
+}
+
+/* ===== Hiệu ứng hoa rơi ===== */
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* ===== Nội dung chính ===== */
+.content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* căn giữa nội dung bên trong */
+  align-items: center;
+  background-color: transparent;
+  padding: 40px;
+  border-radius: 20px;
+  margin: 0 auto;
+  margin-left: 400px;
+  /* đảm bảo căn giữa nếu có độ rộng cố định */
+}
+
+/* ===== Tiêu đề ===== */
+.title {
+  color: #ff6fa5;
+  font-size: 2.6rem;
+  margin-bottom: 25px;
+  text-shadow: 1px 2px 6px rgba(255, 111, 165, 0.3);
+  font-weight: 700;
+}
+
+/* ===== Form nhập tên ===== */
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.form input {
+  padding: 12px 18px;
+  border: 2px solid #ffbcd4;
+  border-radius: 25px;
+  outline: none;
+  font-size: 1rem;
+  width: 240px;
+  background-color: #fff8fb;
+  color: #ff6fa5;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(255, 188, 212, 0.3);
+}
+
+.form input::placeholder {
+  color: #ffa7c3;
+  opacity: 0.7;
+}
+
+.form input:focus {
+  border-color: #ff7ab8;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
+}
+
+.form button {
+  margin-left: 12px;
+  background-color: #ff91c6;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(255, 145, 198, 0.4);
+}
+
+.form button:hover {
+  background-color: #ff6fa5;
+  transform: translateY(-2px);
+}
+
+/* ===== Thiệp chúc ===== */
+.card {
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  width: 280px;
+  height: 190px;
+  transform-style: preserve-3d;
+  position: relative;
+  transition: transform 1s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* ===== Hai mặt thiệp ===== */
+.card-inner .front,
+.card-inner .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(255, 111, 165, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Mặt trước thiệp */
+.front {
+  background-color: #fff0f6;
+}
+
+/* Mặt sau thiệp */
+.back {
+  background-color: #ffeaf4;
+  transform: rotateY(180deg);
+  padding: 15px;
+}
+
+/* ===== Hình hoa ===== */
+.flower {
+  width: 110px;
+  height: 110px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ===== Lời chúc ===== */
+.back p {
+  color: #ff6fa5;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  padding: 10px;
+}
