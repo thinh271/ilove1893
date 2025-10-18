@@ -57,10 +57,10 @@ body {
 
 @media only screen and (max-width: 600px) {
   .gift {
-    max-width: 190px;
+    max-width: 500px;
   }
 
   .card-img {
-    max-width: 190px;
+    max-width: 500px;
   }
 }
